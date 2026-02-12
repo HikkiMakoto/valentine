@@ -41,19 +41,20 @@
             object-fit: cover;
             border-radius: 50%;
             animation: fall linear infinite;
-            opacity: 0.4;
+            opacity: 0;
+            top: -300px;
         }
 
         @keyframes fall {
             0% {
-                top: -200px;
+                top: -300px;
                 transform: rotate(0deg);
                 opacity: 0;
             }
-            10% {
+            5% {
                 opacity: 0.4;
             }
-            90% {
+            95% {
                 opacity: 0.4;
             }
             100% {
@@ -260,7 +261,8 @@
             img.className = 'seal-bg-img';
             img.style.left = Math.random() * 100 + '%';
             img.style.animationDuration = (Math.random() * 5 + 8) + 's';
-            img.style.animationDelay = Math.random() * 10 + 's';
+            // Ensure delay is at least 1s to start seals off-screen
+            img.style.animationDelay = (Math.random() * 10 + 1) + 's';
             sealBackground.appendChild(img);
         }
 
